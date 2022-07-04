@@ -11,24 +11,22 @@ package status;
  */
 public class StausUser 
 {
-   public void statusDetail(String code)
-{
-switch(code.toUpperCase())
-        {
-        case "ZERO": System.out.println("REJECTED");
-        break;
-        case "ONE": System.out.println("PENDING");
-        break;
-        case "TWO":
-        System.out.println("PROCESSING");
-        break;
-        case "THREE": 
-            System.out.println("APPROVED");
-        break;
-        default:
-         System.out.println("NOT VALID CODE");
-        break;
-        }
-}
+   public enum Code {ZERO_REJECTED,ONE_PENDING,TWO_PROCESSING,THREE_APPROVED,}
+   private Code code;
+   
+   public StausUser(Code c){
+   this.code = c;
+   }
+ 
+    public Code getCode() {
+        return code;
+    }
+
+    /**
+     * @param code the code to set
+     */
+    public void setCode(Code code) {
+        this.code = code;
+    }
  
 }
